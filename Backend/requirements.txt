@@ -1,0 +1,12 @@
+agno
+flask
+openai
+pdfplumber
+python-dotenv
+openai-whisper
+google-genai 
+duckduckgo-search 
+gunicorn
+flask_cors
+PyPDF2
+ddgs
