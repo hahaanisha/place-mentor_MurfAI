@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-  base: "/", // Change this if deploying to a subdirectory
+  base: "/",
   plugins: [
     tailwindcss(),
     react(),
@@ -29,10 +29,7 @@ export default defineConfig({
         clientsClaim: true,
       },
       devOptions: {
-        enabled: false,
-        navigateFallback: "index.html",
-        suppressWarnings: true,
-        type: "module",
+        enabled: false
       },
     }),
   ],
@@ -42,11 +39,9 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ["@clerk/clerk-react"],
+    include: ["@clerk/clerk-react"],   // 👈 IMPORTANT
   },
-  build: {
-    commonjsOptions: {
-      include: [/node_modules/],
-    },
-  },
+  ssr: {
+    noExternal: ["@clerk/clerk-react"], // 👈 ALSO CRITICAL FOR VERCEL
+  }
 });
