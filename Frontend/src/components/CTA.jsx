@@ -1,6 +1,20 @@
-import {Button}  from "./ui/button";
+import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
+import { useUser, useClerk } from "@clerk/clerk-react";
 
 function Cta() {
+  const navigate = useNavigate();
+  const { isSignedIn } = useUser();
+  const { openSignIn } = useClerk();
+
+  const nextPage = () => {
+    if (isSignedIn) {
+      navigate("/resume-summary");
+    } else {
+      openSignIn();   // opens Clerk sign-in modal
+    }
+  };
+
   return (
     <section id="cta" className="bg-muted/50 py-16 my-0 sm:my-10">
       <div className="container lg:grid lg:grid-cols-2 place-items-center">
@@ -22,11 +36,13 @@ function Cta() {
         </div>
 
         <div className="space-y-4 lg:col-start-2">
-          {/* <a href="https://youtu.be/RogdnodHS_4">
-            <Button className="w-full md:mr-4 md:w-auto cursor-pointer h-15">
-              <b>Check Demo</b>
-            </Button>
-          </a> */}
+          <Button
+            className="w-full md:mr-4 md:w-auto cursor-pointer h-15"
+            onClick={nextPage}
+          >
+            <b>Try now</b>
+          </Button>
+
           <a href="https://github.com/hahaanisha/place-mentor_MurfAI">
             <Button
               variant="outline"
@@ -39,6 +55,6 @@ function Cta() {
       </div>
     </section>
   );
-};
+}
 
 export default Cta;
