@@ -1,19 +1,11 @@
+# 🚀 Placementor — AI-Powered Voice Interview Coach  
+### **Built Using Murf Falcon**
+
 <p align="center">
   <img src="Readme_img/placementor_logo.png" alt="Demo" width="400" />
 </p>
 
-## About
-
-Placementor is an advanced interview preparation platform designed to assist users in practicing and refining their interview skills. Developed during a hackathon, this project utilizes sophisticated AI agents to simulate realistic interview scenarios and provide actionable feedback.
-
-## Flow:
-<p align="center">
-  <img src="Readme_img/flow.png" alt="Demo" width="1000" />
-</p>
-
-## Demo: [Youtube Video](https://youtu.be/RogdnodHS_4)
-
-## Table of Contents
+## 📚 Table of Contents  
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -25,58 +17,114 @@ Placementor is an advanced interview preparation platform designed to assist use
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
 - [Developed By](#developed-by)
+---
+## About
 
+**Placementor** is a next-generation **voice-first interview training platform** designed to help users practice, improve, and perfect their interview performance.  Placementor is **powered by** by integrating:
+
+✅ **Murf Falcon TTS** for ultra-natural, real-time question narration  
+✅ **Automatic Speech Recognition (ASR)** for live conversational interaction  
+✅ **AI Agents** for adaptive question generation & feedback  
+
+This transforms Placementor from a text-based prep tool into a **fully conversational AI interview mentor.**
+
+---
+
+## Why Voice-First?
+
+IRL Interview depend on your communication skills. There are very few platforms where you can actually practice your communication skills with questions specific to your target company.
+
+Using Murf Falcon + ASR, Placementor now simulates a **real interview room**:  
+- You *hear* the interviewer (Murf Falcon)  
+- You *speak* the answer (ASR)  
+- You *receive* instant, structured feedback (AI Agents)  
+
+This enables:
+- More immersive prep  
+- Better vocal confidence  
+- Practice under real interview pressure  
+- Training for tone, clarity, and speaking patterns  
+
+---
+
+## How Murf Falcon Enhances Experience
+
+Murf Falcon was a **crucial upgrade** to elevate the realism of the interview simulation:
+
+- **Low-latency TTS** enables fluid back-and-forth exchanges  
+- **Stable API output** allowed seamless integration with Flask backend  
+- **Reduced cognitive load** for users—users focus on answers instead of reading text  
+
+This made the project’s shift to **voice-first AI** not just possible, but truly powerful.
+
+---
+
+## 🔁 System Flow  
+<p align="center">
+  <img src="Readme_img/flow.png" alt="Flow" width="1000" />
+</p>
+
+---
 ## Features
 
-- **Resume Upload and Parsing**: Users upload their resumes, which are parsed to extract relevant information.
-- **Interview Simulation**: Users select a company, role, and interview round to generate a tailored set of interview questions.
-- **Speech Recognition**: Users practice answering questions using voice input.
-- **Feedback and Evaluation**: AI agents evaluate user responses and provide detailed feedback, including scores and improvement suggestions.
+- 🎤 **Voice-first Interview Simulation** using Murf Falcon TTS  
+- 🗣️ **Real-time ASR-based Response Capture**  
+- 📄 **Resume Upload & Parsing**  
+- 🧠 **AI Interview Planner** generates role/company-specific questions  
+- ❓ **Dynamic Question Fetching**  
+- 📊 **AI Feedback Agent** provides structure, clarity & relevance scores  
+- 🔁 **Repeat Question Logic** for mastery learning  
+- ⚡ **Fast Flask Backend for Real-Time Conversations**
+
+---
 
 ## Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, Axios
-- **Backend**: Python, Flask
-- **AI and NLP**: Agno Framework, Gemini, SpeechRecognition
-- **Data Handling**: JSON
-- **Version Control**: Git
+- **Frontend:** React.js, Tailwind CSS  
+- **Backend:** Python, Flask  
+- **Voice Tech:**  
+  - **Murf Falcon TTS API**  
+  - **ASR** (Automatic Speech Recognition)  
+- **AI Agents Framework:** Agno + Gemini  
+- **Others:** Axios, JSON, Git  
 
-## Agents
-### Resume Parser
+---
 
-- **Purpose**: Extracts structured information from a user's uploaded resume.
-- **Logic**:
-  - Uses the Gemini model within the Agno framework to parse the resume and extract key details such as full name, email, phone, skills, projects, education, and work experience.
-  - Constructs a prompt that instructs the AI to return the extracted information in a structured JSON format.
-  - Processes the AI response to extract and return the relevant information in the specified format.
- 
-### Interview Planner
+# Agents
 
-- **Purpose**: Generates a structured interview plan based on the user's resume, target company, role, and interview round.
-- **Logic**:
-  - Uses the Gemini model within the Agno framework to create a list of interview questions tailored to the user's selected parameters.
-  - Constructs a detailed prompt that guides the AI to generate questions simulating a real interview, starting with introductory questions and gradually increasing in difficulty.
-  - Outputs the interview plan in a structured JSON format, ensuring easy integration with other components.
+## Resume Parser
 
-### Question Fetcher
+- Extracts structured resume data: name, email, phone, skills, projects, education, experience.  
+- Uses Gemini via Agno Framework.  
+- Returns clean JSON with parsed content.
 
-- **Purpose**: Retrieves specific questions from an interview plan based on the serial number.
-- **Logic**:
-  - Takes an interview plan and a serial number as inputs.
-  - Converts the serial number to a string to match the format in the JSON data.
-  - Iterates through the interview plan to find and return the question corresponding to the given serial number.
-  - Returns an error if the question is not found, ensuring robustness in handling missing data.
+---
 
+## Interview Planner
 
-### Feedback Agent
+- Generates **progressively difficult** interview questions.  
+- Personalized based on company, role, resume, and round.  
+- Outputs a detailed JSON plan.
 
-- **Purpose**: Evaluates user responses to interview questions and provides constructive feedback.
-- **Logic**:
-  - Utilizes the Gemini model within the Agno framework to analyze user answers based on structure, clarity, relevance, and impact.
-  - Constructs a prompt that instructs the AI to evaluate answers on a scale of 1 to 10, provide feedback, suggest improvements, and decide if the user should repeat the question.
-  - Processes the AI response to extract and return a structured JSON format containing the score, feedback, corrected answer, and repeat status.
+---
+
+## Question Fetcher
+
+- Retrieves specific questions by serial number.  
+- Ensures smooth integration with the voice agent step.
+
+---
+
+## Feedback Agent
+
+- Evaluates user answers using AI scoring parameters: structure, clarity, relevance, depth.  
+- Provides:  
+  - Score (1–10)  
+  - Detailed feedback  
+  - Corrected ideal answer  
+  - Repeat-or-proceed recommendation  
+
 
 ## Installation
 
@@ -97,13 +145,15 @@ Placementor is an advanced interview preparation platform designed to assist use
 
 ## Usage
 
-1. **Upload Resume**: Upload your resume in PDF format. The system will parse the resume and extract relevant information.
+1. **Upload Resume (PDF)**
+2. **Select Target Company + Role + Round**
+3. **Start Voice Interview**
+   - Murf Falcon narrates questions  
+   - ASR captures user answers  
+4. **Get Instant Feedback**
+5. **Repeat or Proceed Based on AI Recommendations**
 
-2. **Select Interview Parameters**: Choose the target company, role, and interview round to generate a tailored set of interview questions.
-
-3. **Practice Interview**: Use the speech recognition feature to practice answering the generated interview questions.
-
-4. **Receive Feedback**: After submitting your answers, the AI agents will evaluate your responses and provide detailed feedback, including scores and suggestions for improvement.
+---
 
 ## Screenshots
 
@@ -124,12 +174,43 @@ Placementor is an advanced interview preparation platform designed to assist use
       <img src="Readme_img/readme4.png" alt="Demo 4" width="500" />
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="Readme_img/readme5.jpeg" alt="Demo 5" width="500" />
+    </td>
+    <td align="center">
+      <img src="Readme_img/readme6.jpeg" alt="Demo 6" width="500" />
+    </td>
+  </tr>
 </table>
 
+---
 
-## Contributing
+## Why This Project Stands Out (Winning Angle)
 
-We welcome contributions to Placementor! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+### **1. Fully Voice-First Experience**
+A seamless loop of **listen → speak → analyze → respond**, powered by **Murf Falcon + ASR**.
+
+### **2. Hyper-Realistic Interview Simulation**
+Tone-balanced **Falcon voices** create real HR/technical interview dynamics.
+
+### **3. Modular Dual-Agent Architecture**
+- **Murf Falcon** handles narration  
+- **AI Agents** handle question planning & feedback  
+A future-ready foundation for multi-agent interoperability.
+
+### **4. High-Impact Real-World Use Case**
+Solves a major pain point for millions of **students and job-seekers**.
+
+### **5. Scalable & Extensible**
+Future enhancements include:
+- Multiple voice personalities  
+- Mock HR stress testing  
+- Multilingual interview modes  
+- Company-specific interview packs  
+- Behavioral + technical + system design rounds  
+
+---
 
 ## Developed By
 
