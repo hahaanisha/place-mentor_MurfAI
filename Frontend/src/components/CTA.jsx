@@ -22,12 +22,12 @@ function Cta() {
         </div>
 
         <div className="space-y-4 lg:col-start-2">
-          <a href="https://youtu.be/RogdnodHS_4">
+          {/* <a href="https://youtu.be/RogdnodHS_4">
             <Button className="w-full md:mr-4 md:w-auto cursor-pointer h-15">
               <b>Check Demo</b>
             </Button>
-          </a>
-          <a href="https://github.com/tejasgadge2504/PlaceMentor">
+          </a> */}
+          <a href="https://github.com/hahaanisha/place-mentor_MurfAI">
             <Button
               variant="outline"
               className="w-full md:mr-4 md:w-auto cursor-pointer h-15"
