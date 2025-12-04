@@ -10,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
+  base: "/",   // 👈 REQUIRED FOR VERCEL
   plugins: [
     tailwindcss(),
     react(),
@@ -42,7 +43,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['@clerk/clerk-react']
-    }
-  }
+      external: ["@clerk/clerk-react"],
+    },
+  },
 });
