@@ -176,10 +176,10 @@ This made the project’s shift to **voice-first AI** not just possible, but tru
   </tr>
   <tr>
     <td align="center">
-      <img src="Readme_img/readme5.jpeg" alt="Demo 5" width="500" />
+      <img src="Readme_img/readme5.png" alt="Demo 5" width="500" />
     </td>
     <td align="center">
-      <img src="Readme_img/readme6.jpeg" alt="Demo 6" width="500" />
+      <img src="Readme_img/readme6.png" alt="Demo 6" width="500" />
     </td>
   </tr>
 </table>
