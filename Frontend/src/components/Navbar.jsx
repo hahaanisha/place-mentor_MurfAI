@@ -95,7 +95,7 @@ function Navbar() {
                     </SignOutButton>
                   </SignedIn>
                   <a
-                    href="https://github.com/tejasgadge2504/PlaceMentor"
+                    href="https://github.com/hahaanisha/place-mentor_MurfAI"
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
                       variant: "secondary",
